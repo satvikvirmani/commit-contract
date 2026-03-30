@@ -1,0 +1,87 @@
+{
+  "name": "commit-contract",
+  "displayName": "Commit Contract",
+  "description": "Configure Copilot commit message generation with strict Conventional Commits rules and optional project-specific styling guidance.",
+  "version": "1.0.0",
+  "publisher": "satvikvirmani",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/satvikvirmani/commit-contract"
+  },
+  "bugs": {
+    "url": "https://github.com/satvikvirmani/commit-contract/issues"
+  },
+  "homepage": "https://github.com/satvikvirmani/commit-contract#readme",
+  "icon": "resources/icon.png",
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "categories": [
+    "SCM Providers",
+    "Other"
+  ],
+  "keywords": [
+    "conventional-commits",
+    "commit-messages",
+    "copilot",
+    "git",
+    "semantic-commits"
+  ],
+  "activationEvents": [
+    "workspaceContains:.git"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commit-style.setup",
+        "category": "Commit Contract",
+        "title": "Setup Commit Instructions"
+      },
+      {
+        "command": "commit-style.setCustomInstruction",
+        "category": "Commit Contract",
+        "title": "Set Custom Instruction Text"
+      }
+    ],
+    "configuration": {
+      "title": "Commit Contract",
+      "properties": {
+        "commitStyle.autoSetupOnOpen": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Automatically run setup once per workspace when VS Code opens."
+        },
+        "commitStyle.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Show the Commit Contract status bar item."
+        },
+        "commitStyle.customInstructionText": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Additional commit message styling guidance appended after the base Conventional Commits instructions."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.110.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.56.1",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
