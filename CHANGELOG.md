@@ -4,6 +4,11 @@ All notable changes to Commit Contract are documented in this file.
 
 The format is based on Keep a Changelog and this project follows Semantic Versioning.
 
+## [1.1.0] - 2026-03-31
+
+### Changed
+- Updated extension icon for improved visual identity in the marketplace and editor UI.
+
 ## [1.0.0] - 2026-03-31
 
 ### Added
